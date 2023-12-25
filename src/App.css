@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+
+.ui.header {
+  color: #0078c8;
+  text-align: center;
+  max-width: width;
+  margin: 50px auto; /* Center the container and add top margin */
+  padding: 20px; /* Add padding around the container */
+  background-color: #d6e2e4d2; /* Set a white background color for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}
+
+
+#deleteButton {
+ position: relative;
+ right: -50px;
+ margin-bottom: 10px;
+ 
+}
+
+
