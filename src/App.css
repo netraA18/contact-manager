@@ -36,7 +36,13 @@
     transform: rotate(360deg);
   }
 }
+#contactList {
+  margin-left: 5px;
+}
 
+.form-container {
+  margin-left: 5px;
+}
 
 .ui.header {
   color: #0078c8;
@@ -51,9 +57,58 @@
 
 #deleteButton {
  position: relative;
- right: -50px;
+ right: -20px;
  margin-bottom: 10px;
+ background-color: rgba(167, 228, 208, 0.905);
  
 }
 
+#editButton {
+  position: relative;
+  right: -230px;
+  margin-bottom: 10px;
+  width: 100px;
+  background-color: rgb(255, 209, 255, 0.905);
+}
+
+#editInfo {
+  position: relative;
+  right: 60px;
+  border-radius: 5px;
+  padding: 7px;
+  border: 1px solid #dccaca;
+  
+  
+}
+
+.searchBar {
+ position: absolute;
+ right: 10px;
+ margin-top: -335px;
+}
+
+
+#searchBarInfo {
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 8px; /* Adjust as needed */
+  font-size: 14px; /* Adjust as needed */
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  
+}
+
+#searchButton {
+  border-radius: 5px;
+  padding: 8px 12px ; /* Adjust as needed */
+  font-size: 14px; /* Adjust as needed */
+  background-color: #007bff; /* Set a background color */
+  color: #fff; /* Set text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add pointer cursor */
+ 
+}
+
+#searchButton:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}
 

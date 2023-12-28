@@ -1,22 +1,22 @@
 import React, {useState} from 'react';
 import './App.css';
 import ContactList from './components/ContactList';
-import contacts from './data/contacts';
 import ContactForm from './components/ContactForm';
+import SearchBar from './components/SearchBar';
 
 function App() {
-  const [contacts, setContacts] = useState([]);
+  const [appContacts, setAppContacts] = useState([]);
 
-  /*...creates a new array that includes elements of the existing
-  contacts array and appends the new contact to end of it*/
   const addContact = (newContact) => {
-    setContacts([...contacts, newContact]);
+    setAppContacts([...appContacts, newContact]);
   }
   return (
     <div>
       <h1 className='ui header'>Contact App</h1>
-      <ContactList contacts = {contacts} />
       <ContactForm addContact={addContact}/>
+      <ContactList contactss = {appContacts} setContacts={setAppContacts} />
+     
+      
     </div>
     
   );
