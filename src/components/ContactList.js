@@ -12,7 +12,7 @@ function ContactList({contactss, setContacts}) {
         setContacts(updatedContacts);
     };
     /*editInputs is an array; current state is an empty array so edit Inputs 
-    that stores the edited names for each contact*/
+    that stores the edited name, email, and phone for each contact*/
     const[editInputs, setEditInputs] = useState([]);
     
 
@@ -22,26 +22,26 @@ function ContactList({contactss, setContacts}) {
         const updatedContactsEdit = contactss.map((contact, currentIndex) => {
 
             var commaIndex = StringOne.indexOf(",");  
-            var firstHalf = StringOne.substring(0, commaIndex);
+            var namePart = StringOne.substring(0, commaIndex);
             var i = commaIndex + 1;
             while (StringOne.charAt(i) !== ',') {
                 i++;
             }
-            var secondHalf = StringOne.substring(commaIndex + 1, i); 
-            var thirdHalf = StringOne.substring(i + 1);
+            var emailPart = StringOne.substring(commaIndex + 1, i); 
+            var phonePart = StringOne.substring(i + 1);
                 
             const checkIfNone = "none";
-            if (firstHalf.trim() === checkIfNone) {
-                firstHalf = contact.name;
+            if (namePart.trim() === checkIfNone) {
+                namePart = contact.name;
                 
             }
 
-            if (secondHalf.trim() === checkIfNone) {
-                secondHalf = contact.email;
+            if (emailPart.trim() === checkIfNone) {
+                emailPart = contact.email;
             }
 
-            if (thirdHalf.trim() === checkIfNone) {
-                thirdHalf = contact.phone;
+            if (phonePart.trim() === checkIfNone) {
+                phonePart = contact.phone;
             }
 
             
@@ -50,7 +50,7 @@ function ContactList({contactss, setContacts}) {
                 //shallow copy the properties of the existing contact (immutable) and change the name
                 // console.log("inside text box is: " + editInputs[index] + " and the index is " + index);
                 
-                return {...contact, name: firstHalf, email: secondHalf, phone: thirdHalf};
+                return {...contact, name: namePart, email: emailPart, phone: phonePart};
             }
             //return unchanged contact if nothing is changed
             return contact;
@@ -65,7 +65,7 @@ function ContactList({contactss, setContacts}) {
         <div className="ui list">
             <SearchBar id="searchBar" contacts={contactss} setContacts={setContacts}/>
             <h1 id="contactList">Contact List: </h1>
-            <ul>
+            <ul id="contactListInfo"> 
                 {contactss.map((contact, index) => (
                     <li key={index}>
                         <strong>Name:</strong> {contact.name} |
